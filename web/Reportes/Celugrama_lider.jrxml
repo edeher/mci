@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="802" pageHeight="555" orientation="Landscape" columnWidth="802" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="3ac13cea-fccd-45f3-9481-bf0aeea735cf">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="idCelula2" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[Select  
+						cPersona.idPersona,
+						cPersona.nombres +' '+
+						cPersona.ape_paterno +' '+
+						cPersona.ape_materno as 'miembros',
+						cPersona.direccion,
+						cPersona.edad,
+						cPersona.telefono,
+						cTipoMiembro.descripcion as 'tipmiembro'
+
+						
+
+From cPersona,cMiembro, cCelula,cTipoCelula,cTipoMiembro
+Where cPersona.idPersona=cMiembro.idPersona and 
+      cCelula.idCelula=cMiembro.idCelula and 
+      cMiembro.idTipoMiembro=cTipoMiembro.idTipoMiembro and 
+      cCelula.idTipoCelula=cTipoCelula.idTipoCelula  and 
+      cCelula.idCelula=$P{idCelula2} and cTipoMiembro.descripcion!='m']]>
+	</queryString>
+	<field name="idPersona" class="java.lang.Integer"/>
+	<field name="miembros" class="java.lang.String"/>
+	<field name="direccion" class="java.lang.String"/>
+	<field name="edad" class="java.lang.Integer"/>
+	<field name="telefono" class="java.lang.String"/>
+	<field name="tipmiembro" class="java.lang.String"/>
+	<group name="cPersona_idPersona">
+		<groupExpression><![CDATA[$F{idPersona}]]></groupExpression>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="36" splitType="Stretch">
+			<staticText>
+				<reportElement x="26" y="14" width="79" height="20" uuid="c1f2dadd-41ae-406a-8783-66a56adf28bb"/>
+				<text><![CDATA[codigo]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="152" y="13" width="100" height="20" uuid="24bc826b-4f5d-4bff-90dd-6be4b4f390ed"/>
+				<text><![CDATA[nombres]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="286" y="13" width="100" height="20" uuid="73177a4e-9ee9-4bfc-94ce-753ee6e98388"/>
+				<text><![CDATA[direccion]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="552" y="14" width="100" height="20" uuid="b45abe2f-98da-4c7a-9d78-08e681121ee7"/>
+				<text><![CDATA[telefono]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="683" y="13" width="100" height="20" uuid="0337fc6f-6223-4f2f-a946-37cea7a7dbf8"/>
+				<text><![CDATA[tipo de miembro]]></text>
+			</staticText>
+			<rectangle radius="10">
+				<reportElement mode="Transparent" x="5" y="10" width="100" height="20" uuid="a6a05569-f8ba-4596-bfcb-c2f4ca4fba89"/>
+			</rectangle>
+			<rectangle radius="10">
+				<reportElement mode="Transparent" x="127" y="10" width="113" height="20" uuid="70b0dbd3-7b11-41c6-8b27-4650e8ed56ce"/>
+			</rectangle>
+			<rectangle radius="10">
+				<reportElement mode="Transparent" x="252" y="10" width="122" height="20" uuid="0d0f6335-3402-4649-b206-89c87ae6621f"/>
+			</rectangle>
+			<rectangle radius="10">
+				<reportElement mode="Transparent" x="386" y="10" width="100" height="20" uuid="da4a8769-64c0-426f-a39e-5f63e21c0fe4"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="420" y="13" width="100" height="20" uuid="af38b844-ed26-4394-aee5-23e733f4534d"/>
+				<text><![CDATA[edad]]></text>
+			</staticText>
+			<rectangle radius="10">
+				<reportElement mode="Transparent" x="531" y="13" width="100" height="20" uuid="6a1f9bae-f57f-4d00-a098-ccc66f7db487"/>
+			</rectangle>
+			<rectangle radius="10">
+				<reportElement mode="Transparent" x="671" y="13" width="100" height="20" uuid="1e9ba124-2c36-4538-941e-abfb25281cd5"/>
+			</rectangle>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="23" splitType="Stretch">
+			<textField>
+				<reportElement x="140" y="0" width="100" height="20" uuid="48c586ee-8f4d-4303-a8a3-5f448b34f065"/>
+				<textFieldExpression><![CDATA[$F{miembros}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="274" y="0" width="100" height="20" uuid="58848199-ac53-4f3e-8766-a688ca67a098"/>
+				<textFieldExpression><![CDATA[$F{direccion}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="421" y="0" width="57" height="20" uuid="7410802a-bbf6-4f0a-b099-3a22f15a9d9e"/>
+				<textFieldExpression><![CDATA[$F{edad}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="549" y="0" width="100" height="20" uuid="52f72a4d-e3f8-4bd8-8573-50d7634db9da"/>
+				<textFieldExpression><![CDATA[$F{telefono}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="701" y="0" width="67" height="20" uuid="fd4a02e3-faca-4825-9a66-e7b039ca8ce9"/>
+				<textFieldExpression><![CDATA[$F{tipmiembro}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="39" y="3" width="48" height="20" uuid="e906260d-a522-43a5-b22d-701d4b3404b3"/>
+				<textFieldExpression><![CDATA[$F{idPersona}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+</jasperReport>

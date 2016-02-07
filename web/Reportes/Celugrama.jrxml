@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="3af8b4fe-ad44-444d-a424-9a32956e5540">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="idCelula" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["D:\\Documentos\\NetBeansProjects\\iglesia\\mci\\web\\Reportes\\"]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[Select  
+						cCelula.idCelula,
+						cCelula.direccion as 'direcelula', 
+						cCelula.referencia,
+						dia_realiza as'diarealiza',
+						hora_realiza as 'horarealiza',
+						cCelula.fecha_apertura as'feapertura',
+						cCelula.telefono as 'telcelula',
+						cTipoCelula.descripcion as'tipcelula'
+						
+						
+
+From  cCelula,cTipoCelula
+Where 
+      cCelula.idTipoCelula=cTipoCelula.idTipoCelula  and 
+      cCelula.idCelula=$P{idCelula}]]>
+	</queryString>
+	<field name="idCelula" class="java.lang.Integer"/>
+	<field name="direcelula" class="java.lang.String"/>
+	<field name="referencia" class="java.lang.String"/>
+	<field name="diarealiza" class="java.lang.String"/>
+	<field name="horarealiza" class="java.lang.String"/>
+	<field name="feapertura" class="java.lang.String"/>
+	<field name="telcelula" class="java.lang.String"/>
+	<field name="tipcelula" class="java.lang.String"/>
+	<group name="cCelula_idCelula">
+		<groupExpression><![CDATA[$F{idCelula}]]></groupExpression>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="42" splitType="Stretch">
+			<rectangle radius="10">
+				<reportElement x="0" y="11" width="79" height="20" uuid="083ce5f1-6aa9-46f7-be72-8387ba1b3de2"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="13" y="14" width="54" height="20" uuid="08471e12-4e10-4ac5-a191-dafd54464129"/>
+				<text><![CDATA[Id Celula]]></text>
+			</staticText>
+			<rectangle radius="10">
+				<reportElement x="86" y="11" width="67" height="20" uuid="f6f643b8-9b44-412b-8e6d-995f978c8f4d"/>
+			</rectangle>
+			<rectangle radius="10">
+				<reportElement x="168" y="14" width="75" height="20" uuid="a86d022f-c705-46cf-9b85-e916781b7f39"/>
+			</rectangle>
+			<rectangle radius="10">
+				<reportElement x="367" y="11" width="66" height="20" uuid="4701fb86-bd68-44cc-9eff-9dcd35c76088"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="94" y="13" width="74" height="20" uuid="b91967e2-64b4-4313-b7a1-1cad9872f275"/>
+				<text><![CDATA[Direccion]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="176" y="16" width="64" height="20" uuid="ffed628a-8ad3-4c16-a543-172ff4f80a27"/>
+				<text><![CDATA[Referencia]]></text>
+			</staticText>
+			<rectangle radius="10">
+				<reportElement x="275" y="11" width="63" height="20" uuid="d547662c-7f30-4ce3-b273-61a23382b8ec"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="291" y="14" width="63" height="20" uuid="57ef2ce5-2448-45f5-b23c-ea9b43259c34"/>
+				<text><![CDATA[Dia]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="386" y="13" width="66" height="20" uuid="aac15330-3527-448d-a7b6-77dd93ff8d84"/>
+				<text><![CDATA[Hora]]></text>
+			</staticText>
+			<rectangle radius="10">
+				<reportElement x="459" y="11" width="63" height="20" uuid="4f1b33d8-9748-4582-a1f3-015a4b2d45d2"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="468" y="13" width="62" height="20" uuid="30c2e6d8-1288-46b7-a4fa-1db2bfc24ed8"/>
+				<text><![CDATA[Apertura]]></text>
+			</staticText>
+			<rectangle radius="10">
+				<reportElement x="549" y="11" width="100" height="20" uuid="5f0eea52-c186-490a-9c59-f77be090eee0"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="566" y="13" width="100" height="20" uuid="b726cc33-af36-48ac-80a6-a847806455f8"/>
+				<text><![CDATA[Telefono]]></text>
+			</staticText>
+			<rectangle radius="10">
+				<reportElement x="686" y="11" width="89" height="20" uuid="35f5083e-ff76-42ca-831a-a9525e6f370d"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="695" y="13" width="100" height="20" uuid="744a3b53-d2f6-4e1f-9685-bb4371aeaec7"/>
+				<text><![CDATA[Tipo Celula]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="275" y="-20" width="218" height="31" forecolor="#009933" uuid="03b9e8e5-3669-4d31-8566-e8088d1662fa"/>
+				<textElement>
+					<font size="24" isBold="true" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[Datos de la Célula]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="24" splitType="Stretch">
+			<textField>
+				<reportElement x="13" y="0" width="54" height="20" uuid="087e2cea-035e-4cb3-bfdb-b3b8ed5960ba"/>
+				<textFieldExpression><![CDATA[$F{idCelula}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="86" y="0" width="67" height="20" uuid="837f5cc2-add7-4a19-a457-0c19163e1cfc"/>
+				<textFieldExpression><![CDATA[$F{direcelula}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="179" y="0" width="64" height="20" uuid="c1c433ff-a06b-4e0d-a388-8b33d3d72eb3"/>
+				<textFieldExpression><![CDATA[$F{referencia}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="275" y="0" width="63" height="20" uuid="fc993863-ebe2-46c5-a525-0a63e85ae364"/>
+				<textFieldExpression><![CDATA[$F{diarealiza}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="367" y="0" width="66" height="20" uuid="8b310438-c42e-4fd3-872e-67f82c79d081"/>
+				<textFieldExpression><![CDATA[$F{horarealiza}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="467" y="0" width="63" height="20" uuid="a5ec099e-d65d-4460-a0d1-11386283c216"/>
+				<textFieldExpression><![CDATA[$F{feapertura}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="549" y="0" width="100" height="20" uuid="89e4b6c0-41a6-4963-ad1f-fc938266aa22"/>
+				<textFieldExpression><![CDATA[$F{telcelula}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="686" y="0" width="100" height="20" uuid="02599798-f85e-4e63-b1d5-5d440d2caa52"/>
+				<textFieldExpression><![CDATA[$F{tipcelula}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="79" splitType="Stretch">
+			<subreport>
+				<reportElement x="0" y="34" width="200" height="45" uuid="8a847236-5fcd-4181-8a70-56fd62ab2bef"/>
+				<subreportParameter name="idCelula2">
+					<subreportParameterExpression><![CDATA[$F{idCelula}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression><![CDATA["D:\\Documentos\\NetBeansProjects\\iglesia\\mci\\web\\Reportes\\Celugrama_lider.jasper"]]></subreportExpression>
+			</subreport>
+			<staticText>
+				<reportElement x="291" y="1" width="178" height="33" forecolor="#009933" uuid="3ea02459-6908-4975-82bc-f71a7cfbc9b2"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Arial" size="26" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[Lider de Célula]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="81" splitType="Stretch">
+			<subreport>
+				<reportElement x="0" y="33" width="200" height="47" uuid="6a8a5c70-b2ff-4edf-bec4-eb55c64a2aaa"/>
+				<subreportParameter name="idCelula3">
+					<subreportParameterExpression><![CDATA[$F{idCelula}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression><![CDATA["D:\\Documentos\\NetBeansProjects\\iglesia\\mci\\web\\Reportes\\Celugrama_miembros.jasper"]]></subreportExpression>
+			</subreport>
+			<staticText>
+				<reportElement x="275" y="0" width="239" height="33" forecolor="#009933" uuid="03b10fd1-951e-4b55-8d14-e150ec851394"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Arial" size="26" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[Miembros de Célula]]></text>
+			</staticText>
+		</band>
+	</detail>
+</jasperReport>

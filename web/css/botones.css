@@ -1,0 +1,7 @@
+    .botonimagen{
+      background-image:url("../imganes/cerrar.png");
+      background-repeat:no-repeat;
+      height:50px;
+      width:50px;
+      background-position:center;
+    }
