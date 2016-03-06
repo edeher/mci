@@ -66,6 +66,7 @@ public class sCelulainte extends HttpServlet {
         String obser="";
         String sexo="";
         int cboint=0;
+        //menu con switch
 //        switch (val)
 //        {
 //            case "NUE":
@@ -176,6 +177,7 @@ public class sCelulainte extends HttpServlet {
                      rd = getServletContext().getRequestDispatcher("/frmCelulaInte1.jsp?idcelula="+idcelula+"&vRespuesta=1");
                      rd.forward(request,response);
                     
+                     
                
             } 
             else 
@@ -226,6 +228,7 @@ public class sCelulainte extends HttpServlet {
                      }
              }
         }  
+       
         if(val.equals("RECARGA"))
         {
             rd = getServletContext().getRequestDispatcher("/celugrama.jsp?val=entro&vRespuesta=2");

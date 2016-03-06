@@ -201,7 +201,7 @@ public class cAlcance {
               if(con == null)
                   throw new NullPointerException(dbm.getError());
               CallableStatement st=con.prepareCall("{call sp_alcance_bco(?)}");
-              st.registerOutParameter(1,Types.INTEGER);
+              
                 st.setInt(1,codigo);
               ResultSet rs = st.executeQuery();
               if(rs.next()){
